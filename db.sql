@@ -29,7 +29,7 @@ CREATE TABLE `cwaling_newspaper` (
   `e-mail` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `headline` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `cwaling_newspaper` (
 
 LOCK TABLES `cwaling_newspaper` WRITE;
 /*!40000 ALTER TABLE `cwaling_newspaper` DISABLE KEYS */;
-INSERT INTO `cwaling_newspaper` VALUES (1,'AI일보','박재상','','크롤링링을 이용한 검색 만들기'),(28,'뉴스1','박주평','jupy@news1.kr','진짜 불륜 아니에요? 질문에 송윤아 나쁜일 안했다 댓글'),(29,'국민일보','문동성','theMoon@kmib.co.kr','확진 간호사는 책임감에 펑펑 울었다 명지병원 이사장의 글'),(30,'연합뉴스','이동환','ask@yna.co.kr','MBC 기자,  박사방  송금 정황…취재 목적'),(31,'뉴시스','박준호','pjh@newsis.com','섹시팬티 빨기 미녀 많다 초등교사 발언 논란'),(32,'연합뉴스','손상원','pch80@yna.co.kr','MBC 기자,  박사방  송금 정황…취재 목적'),(33,'서울신문','입력','kodefkim@naver.com','귀여운 토끼를 통째로 삼키는 거대 갈매기 포착'),(34,'프레시안','입력','None','한국 과학정책, 무궁화꽃이 피었습니까?'),(35,'동아일보','송홍근','carrot@donga.com','오늘부터 공적 마스크 3장씩 구매 가능..대리구매 기준도 완화'),(36,'YTN','백순영','None','신천지 31번 환자 퇴원..치료비 국가·지자체 부담'),(37,'매경이코노미','입력','None','[외환·금융위기와 코로나19 파장 비교] 외환위기 땐 코스피 7개월새 56% 폭락 - 코로나, 두달새 35% 뚝..바닥 장담 못해'),(38,'경향신문','이주영','young78@kyunghyang.com','[단독]우리 조직에서 임신하면 죄인…경찰 상사  폭언  들은 여경 유산'),(39,'머니투데이','김지영','kjyou@mt.co.kr','개인회생 포기합니다 50대 가장 김씨는 결국 파산했다'),(40,'뉴스1','민선희','minssun@news1.kr','진짜 불륜 아니에요? 질문에 송윤아 나쁜일 안했다 댓글'),(41,'뉴스1','최은지','silverpaper@news1.kr','진짜 불륜 아니에요? 질문에 송윤아 나쁜일 안했다 댓글'),(42,'뉴시스','김형섭','bright@newsis.com','섹시팬티 빨기 미녀 많다 초등교사 발언 논란'),(43,'뉴스1','이균진','asd123@news1.kr','진짜 불륜 아니에요? 질문에 송윤아 나쁜일 안했다 댓글'),(44,'연합뉴스','차지연','charge@yna.co.kr','MBC 기자,  박사방  송금 정황…취재 목적'),(45,'미디어오늘','금준경','None','난장판된 선거부정 음모론 토론회에 할말 잃은 이준석'),(46,'파이낸셜뉴스','장민권','mkchang@fnnews.com','나경원,  국민 밉상  소리에 날린 한 방 혹시..'),(47,'뉴시스','유자비','jabiu@newsis.com','섹시팬티 빨기 미녀 많다 초등교사 발언 논란'),(48,'뉴시스','최서진','westjin@newsis.com','섹시팬티 빨기 미녀 많다 초등교사 발언 논란'),(49,'연합뉴스','이동환','ask@yna.co.kr','MBC 기자,  박사방  송금 정황…취재 목적');
+INSERT INTO `cwaling_newspaper` VALUES (1,'AI일보','박재상','','크롤링링을 이용한 검색 만들기'),(72,'뉴스1','김정률','jrkim@news1.kr','여야, 29일 본회의 개최 합의.. 재난지원금  추경안 처리(상보)'),(73,'뉴스1','구교운','kukoo@news1.kr','문대통령, 독자적 남북관계 개선 의지..코로나가 기회'),(74,'경향신문','박홍두','phd@kyunghyang.com','민주당,  성추행 파문  오거돈 부산시장 제명..청와대 사전 인지설 등엔 절대 아니다'),(75,'경향신문','김형규','fidelio@kyunghyang.com','오거돈 성추행, 청와대가 몰랐을리 없다 통합당·한국당, 진상조사단 구성'),(76,'국민일보','박세환','foryou@kmib.co.kr','문 대통령-정세균 총리 4월 중 재난지원금 추경 통과 지원'),(77,'서울신문','입력','kodefkim@naver.com','[김대영의 무기 인사이드] 경전차 부활의 신호탄 미 육군의  MPF '),(78,'프레시안','입력','None',' 전국-권역 병행 비례대표제도 로의 개혁을 상상한다'),(79,'동아일보','송홍근','carrot@donga.com','평양에 샤넬 매장이? 돈주들의  귀족 백화점  [송홍근 기자의 언박싱평양]'),(80,'YTN','백순영','None','[이슈인사이드] 열흘째 신규 환자 10명대..정부 등교 개학 여부 조만간 결정'),(81,'매경이코노미','입력','None','[신율의 정치 읽기] 대한민국 이념지형 변했다'),(82,'신동아','김우정','friend@donga.com','[사바나] 통합당은 전화도 없는데, 민주당이  미안하다  연락'),(83,'노컷뉴스','CBS노컷뉴스','kimdb@cbs.co.kr','문 대통령 K-방역 넘어 K-일상이 또 다른 세계 표준'),(84,'뉴스1','민선희','minssun@news1.kr','주한미군 근로자임금, 정부가 선지급..한미 방위비 장기전 수순'),(85,'뉴시스','박대로','daero@newsis.com','미국서 입국한 주한미군 가족 코로나19 양성..26번째 확진'),(86,'뉴시스','최서진','westjin@newsis.com','이준석,  투표함 증거보전 신청  민경욱에 유튜버에 영혼 위탁'),(87,'한국일보','안아람','oneshot@hankookilbo.com','공사 교수, 비행교육 중 생도들 폭행 정황.. 되살아난 구태'),(88,'이데일리','김미경','midory@edaily.co.kr','김정은, 잠행 16일째.. 신상  두고 여야 엇갈린 시각(종합)'),(89,'미디어오늘','금준경','None',' 김정은 사실상 사망  장성민 주장에 쏟아진 기사만 90개'),(90,'뉴시스','유자비','jabiu@newsis.com','돌아온다 약속지킨 안철수..다시 대구서 의료봉사 시작'),(91,'연합뉴스','이동환','ask@yna.co.kr','이준석, 민경욱 투표함 증거보전신청 비판..유튜버에 영혼위탁(종합)'),(92,'뉴시스','한주홍','hong@newsis.com','재난지원금 전국민 지급, 수령 75% vs 수령 거부 20%'),(93,'뉴스1','이균진','asd123@news1.kr','통합당, 오거돈 TF 구성..곽상도 김웅 검사출신 총출동(종합)');
 /*!40000 ALTER TABLE `cwaling_newspaper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +54,7 @@ CREATE TABLE `login_user` (
   `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +63,7 @@ CREATE TABLE `login_user` (
 
 LOCK TABLES `login_user` WRITE;
 /*!40000 ALTER TABLE `login_user` DISABLE KEYS */;
-INSERT INTO `login_user` VALUES (1,'jaesang','19d869167a25c806ab4981e0aa89000c95edb98d7f044c6079a24f750252144c'),(2,'111','d17f25ecfbcc7857f7bebea469308be0b2580943e96d13a3ad98a13675c4bfc2'),(3,'1111','bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a');
+INSERT INTO `login_user` VALUES (1,'jaesang','19d869167a25c806ab4981e0aa89000c95edb98d7f044c6079a24f750252144c'),(2,'111','d17f25ecfbcc7857f7bebea469308be0b2580943e96d13a3ad98a13675c4bfc2'),(3,'1111','bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a'),(4,'2','d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35');
 /*!40000 ALTER TABLE `login_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-27 16:04:26
+-- Dump completed on 2020-04-27 17:12:56
