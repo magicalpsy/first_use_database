@@ -79,9 +79,51 @@ def get_today_article():
         publiser_list.append(templist)
 #     print(publiser_list)
     return publiser_list
+def make_recently_table(publiser_list, select_newspaper):
+    macro = ""
+    headline_all = ""
+    for index, w in enumerate(publiser_list):
+        macro += f"""
+            <tr>
+                <td>{w[0]}</th>
+                <td>{w[1]}</th>
+                <td>{w[2]}</th>
+            </tr>
+          """
+        headline_all += w[2].replace('"', '').replace("'"," ")
+#       SQL 개행문자 입력 방법 추후 확인
+        headline_all += '\n'
 
+    table_text=f"""
+        <table class="type11">
+            <thead>
+                <tr>
+                    <th scope="cols" colspan="3"> 오늘의 주요 기사 중 {select_newspaper} 기사</th>
+                </tr>
+                <tr>
+                    <th scope="cols">신문사</th>
+                    <th scope="cols">기사</th>
+                    <th scope="cols">headline</th>
+                </tr>
+            </thead>
+            <tbody>
+                {macro}
+            </tbody>
+            </table>
+        """
+    # #     UPDATE `cwaling_newspaper` SET `headline`="12345" WHERE `reportor` = '박재상' AND `newspaper` = 'AI일보'
+    sql = f"""UPDATE `cwaling_newspaper` SET `headline` = '{headline_all}'
+            WHERE `reportor` = {w[1].replace('"',"'")} AND `newspaper` = {w[0].replace('"',"'")}
+            """
+    print(sql)
+    cursor = db.cursor()
+    cursor.execute(sql)
+    db.commit()
+    # table
+    return table_text
 def make_table(publiser_list, select_newspaper):
     macro = ""
+
     for w in publiser_list:
         if "ALL" in select_newspaper :
             macro += f"""
@@ -109,7 +151,7 @@ def make_table(publiser_list, select_newspaper):
                 </th>
             </tr>
             """
-    
+    lne_publiser_list= len(publiser_list)
     table_text=f"""
         <table class="type11">
             <thead>
@@ -128,11 +170,13 @@ def make_table(publiser_list, select_newspaper):
             </tbody>
             </table>
         """
-    # table
+
     return table_text
 
 @app.route("/recetly_news_view", methods=['GET', 'POST'])
 def recetly_news_view( ):
+    if request.method == 'POST':
+        return redirect("/")
     newspaper = request.args.get('newspaper')
     repoter = request.args.get('reporter')
     options = webdriver.ChromeOptions()
@@ -153,15 +197,18 @@ def recetly_news_view( ):
         temp_make_list = []
         temp_make_list.append(newspaper)
         temp_make_list.append(repoter)
-        temp_make_list.append(repoter)
-        temp_make_list.append(str(w))
+        temp_make_list.append(str(w.get_text()) )
         make_list.append(temp_make_list)
         
-    get_table = make_table(make_list, "ALL")
-                
+    get_table = make_recently_table(make_list, newspaper)
     return render_template('receltly_news.html',
-                 table=get_table
+                 table=get_table,
+                action = "메인페이지 이동" ,
+                form_action = "/recetly_news_view"
+                           
                  )
+
+
 
 def get_menu(publiser_list):
     select_option_base=""
@@ -180,8 +227,6 @@ def save_NewsPaper_db():
     get_table=""
     menu= ""
     cursor = db.cursor()
-    print("*"*100)
-    print("save_NewsPaper_db")
     publiser_list = temp_publiser
     for num, w in enumerate(publiser_list):
         print(w)
@@ -191,11 +236,8 @@ def save_NewsPaper_db():
             insert into Cwaling_NewsPaper (`newspaper`, `reportor`, `e-mail`, `headline`)
             values('{w[0]}','{w[1]}', '{w[2]}', '{replace_headline}')
             """
-        print(sql)
-        print("-"*100)
         cursor.execute(sql)
         db.commit()
-       
     return redirect("/get_article_db")
 
 
