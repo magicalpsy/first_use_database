@@ -1,0 +1,41 @@
+<style>
+    table.type11 {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 20px 10px;
+}
+table.type11 th {
+    width: 155px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: center;
+    color: #fff;
+    background: #ce4869 ;
+    
+}
+
+table.type11 td {
+    width: 155px;
+    padding: 10px;
+    vertical-align: center;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+}
+    .type11-th-3 {
+    width: 300px;    
+}
+</style>
+
+<form action='/search_today_article' method='post'>
+    오늘자 정치색션 주요 뉴스 DB 화 &nbsp;
+    <button type='submit'>검색</button>
+</form>
+<form action={{ form_action }} method='post'>
+    {{menu|safe}}
+    <button type = 'submit'>{{action}}</button>
+</form>
+
+
+{{table|safe}}
